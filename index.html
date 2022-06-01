@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=1"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>SNOW 360</title><link rel="icon" type="image/png" href="./assets/favicon.png"><style>html {
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=1"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>Stadium 360</title><link rel="icon" type="image/png" href="./assets/favicon.png"><style>html {
             touch-action: none;
             user-select: none;
             -webkit-user-select: none;
@@ -13,6 +13,7 @@
             user-select: none;
             -webkit-user-select: none;
             -webkit-touch-action: none;
+            background-color: #000000 !important;
         }
         
         #game-sec {
@@ -46,28 +47,6 @@
             margin-right: 0;
             margin-top: 0;
         }
-        /* #app-loader-sec {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            height: 100%;
-            background-color: rgba(1, 1, 1, 1);
-            z-index: 5000;
-        }
-        
-        #app-loader-sec.inactive.disabled2 {
-            display: none;
-        }
-        
-        #app-loader-sec .loader-content svg {
-            position: relative;
-            width: 5vw;
-            height: 5vw;
-            left: 50%;
-            transform: translateX(-50%)
-        } */
         
         #loaderIcon {
             width: 10vw;
@@ -75,15 +54,62 @@
             margin: auto;
             border-radius: 20px;
         }
-        /* #app-loader-sec .loader-content {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%)
-        } */
         
         @media (max-width: 1024px) and (orientation: landscape) {
             #view_pdf {
                 font-size: 2vw !important;
+            }
+        }
+        
+        @media (min-width:320px) {
+            /* smartphones, iPhone, portrait 480x320 phones */
+        }
+        
+        @media (min-width:481px) {
+            /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+        }
+        
+        @media (min-width:641px) {
+            /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+            #renderCanvas {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 400px !important;
+            }
+        }
+        
+        @media (min-width:961px) {
+            /* tablet, landscape iPad, lo-res laptops ands desktops */
+            #renderCanvas {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 400px !important;
+            }
+        }
+        
+        @media (min-width:1025px) {
+            /* big landscape tablets, laptops, and desktops */
+            #renderCanvas {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 400px !important;
+            }
+        }
+        
+        @media (min-width:1281px) {
+            /* hi-res laptops and desktops */
+            #renderCanvas {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 400px !important;
             }
         }
         
@@ -649,7 +675,7 @@
             width: 100%;
             height: 100vh;
             z-index: 1;
-            background-image: url(./assets/BG-Intro.jpg);
+            background-image: url(./assets/BG-Intro.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: 100% 100%;
@@ -683,12 +709,48 @@
             margin: auto;
         }
         
+        #exploreimg {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+        }
+        
+        #exploreimg div {
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            margin: auto;
+            position: absolute;
+            height: 200px;
+            border-radius: 40px;
+            background: white;
+            color: #000000;
+            font-size: 120px;
+            text-align: center;
+        }
+        
         @media only screen and (min-width: 768px) {
-            /* .sbmit:hover {
+            .sbmit:hover {
                 content: url('./assets/ENTER-STORE-hover.jpg');
-            } */
+            }
             .close:hover {
                 content: url('./assets/pop-up_close-button-hover.jpg');
+            }
+            #exploreimg div {
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                margin: auto;
+                position: absolute;
+                height: 8rem;
+                border-radius: 40px;
+                background: white;
+                color: #000000;
+                font-size: 5rem;
+                text-align: center;
             }
         }
         
@@ -698,7 +760,7 @@
                 height: 80% !important;
             }
             #exploreimg {
-                width: 24% !important;
+                width: 54% !important;
             }
             #productimg {
                 width: 85%;
@@ -710,29 +772,20 @@
             #loaderload {
                 width: 22% !important;
             }
-        }</style></head><body><div id="soundBtn" style="position: absolute;
-    z-index: 1;
-    width: 5%;"><img src="./assets/Unmute.png" id="audiobtn" style="padding: 20%;
-        width: 100%;"></div><div id="game-sec"><canvas id="renderCanvas"></canvas></div><audio id="aud"><source src="./assets/bensound.mp3" type="audio/mpeg"></audio><div id="introbg"><div id="exploreimg" style="text-align: center;
-        position: absolute;
-        width: 20%;
-        height: 100%;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;"><img style="width: 100%;
-            height: auto;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;" src="assets/EXPLORE-NOW.png" alt="" id="submit" class="sbmit"/></div></div><div id="loaderUI"><img src="./assets/loader.gif" alt="loading.." id="loaderload" style="width: 7%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);"/></div><div id="showProduct"><div class="productimg" id="productimg"><img src="./assets/pop-up_close-button.jpg" class="close" alt=""/> <img src="./assets/products/product1.jpg" id="dimg" alt=""/></div></div><script>document.getElementById("loaderUI").style.width = document.getElementById("game-sec").style.width;</script><script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script><script src="https://preview.babylonjs.com/babylon.js"></script><script>function myFunction(x) {
+            #exploreimg div {
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                margin: auto;
+                position: absolute;
+                height: 8rem;
+                border-radius: 40px;
+                background: white;
+                color: #000000;
+                font-size: 5rem;
+                text-align: center;
+            }
+        }</style></head><body><div id="game-sec"><canvas id="renderCanvas"></canvas></div><div id="introbg"><div id="exploreimg" style="text-align: center;position: absolute;width: 12%;left: 0;right: 0;margin: auto;"><div id="submit"><p>START</p></div></div></div><div id="loaderUI"></div><script>document.getElementById("loaderUI").style.width = document.getElementById("game-sec").style.width;</script><script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script><script src="https://preview.babylonjs.com/babylon.js"></script><script>function myFunction(x) {
             x.classList.toggle("change");
             document.querySelector(".menu_content").classList.toggle("active");
         }</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script><script src="./main.bundle.js"></script></body></html>
